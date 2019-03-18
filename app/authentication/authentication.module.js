@@ -32,6 +32,7 @@ function ($scope, $rootScope,authenticationService,$http){
       var obj = { 'username': userObj.username, 'password': userObj.password };
 
       alert('Sign Up is successful');
+      window.location.replace('#!/login');
 
       // authenticationService.signUp(obj)
       // .then(
