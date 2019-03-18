@@ -20,7 +20,7 @@ angular.module('authenticationApp').factory('authenticationService', [ '$http', 
         method: 'POST',
         type: 'JSON',
         data: userObj,
-        url: config.url+'/api/user/'
+        url: config.url+'mortgage/api/user/'
       });
     }
 

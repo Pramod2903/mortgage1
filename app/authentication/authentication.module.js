@@ -29,20 +29,20 @@ function ($scope, $rootScope,authenticationService,$http){
 
       console.log(JSON.stringify(userObj));
 
-      var obj = { 'username': userObj.username, 'password': userObj.password };
+      var obj = { 'userName': userObj.username, 'password': userObj.password };
 
-      alert('Sign Up is successful');
-      window.location.replace('#!/login');
+      // alert('Sign Up is successful');
 
-      // authenticationService.signUp(obj)
-      // .then(
-      //   function (success) {
-      //       alert('Sign Up Regstration is successful');
-      //       window.location.replace('#!/login');
-      //   },
-      //   function (error) {
-      //       alert('Failed to register the user');
-      //   });             
+      authenticationService.signUp(obj)
+      .then(
+        function (success) {
+            alert('Sign Up Regstration is successful');
+            window.location.replace('#!/login');
+        },
+        function (error) {
+            alert('Failed to register the user');
+        });             
+        window.location.replace('#!/login');
     }
 }
 

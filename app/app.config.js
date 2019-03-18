@@ -16,9 +16,17 @@ angular.
           controller: 'authenticationController',
           templateUrl: 'authentication/signup.template.html'
         }).
+        when('/personal', {
+          controller: 'usersAppController',
+          templateUrl: 'users/users_details.html'
+        }).  
+        when('/property', {
+          controller: 'usersAppController',
+          templateUrl: 'users/users_properties.html'
+        }).  
         when('/offers', {
-          controller: 'authenticationController',
-          template: '<h2>Welcome to Offers</h2>'
+          controller: 'usersAppController',
+          template: '<user-list></user-list>'
         }).        
         otherwise('/login');
     }
