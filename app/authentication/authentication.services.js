@@ -15,43 +15,24 @@ angular.module('authenticationApp').factory('authenticationService', [ '$http', 
       $window.localStorage['currentUser'] = username;
     }
 
-    // service.signUp = function (userObj) {
-    //   return $http({
-    //     method: 'POST',
-    //     type: 'JSON',
-    //     data: userObj,
-    //     url: config.url+'/api/user/'
-    //   });
-    // }
+    service.signUp = function (userObj) {
+      return $http({
+        method: 'POST',
+        type: 'JSON',
+        data: userObj,
+        url: config.url+'/api/user/'
+      });
+    }
 
-    // service.SetCredentials = function (userobj) {
-    //   var authdata = Base64.encode(userobj.username + ':' + userobj.password); // We shoud really encrypt this, but this is left clear case for this example :)
-    //   $rootScope.globals = {
-    //     currentUser: {
-    //       username: userobj.username,
-    //       authdata: userobj.password
-    //     }
-    //   };
-    //   $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
-    //   $cookies.put('globals', $rootScope.globals);
 
-    // };
+    service.login = function (userobj) {
 
-    // service.login = function (userobj) {
-
-    //   return $http({
-    //     method: 'GET',
-    //     type: 'JSON',
-    //     url: config.url+'/api/user/authenticate'
-    //   });
-    // }
-
-    // service.ClearCredentials = function () {
-    //   $rootScope.globals = {};
-    //   $cookies.remove('globals');
-    //   $http.defaults.headers.common.Authorization = 'Basic ';
-    // };
-
+      return $http({
+        method: 'GET',
+        type: 'JSON',
+        url: config.url+'/api/user/authenticate'
+      });
+    }
 
     return service;
 
